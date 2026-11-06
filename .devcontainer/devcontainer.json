@@ -1,0 +1,21 @@
+{
+  "name": "Cobot Development",
+  // Указываем путь к твоему Dockerfile относительно этой папки
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  // Пробрасываем графику (X-сервер) внутрь контейнера
+  "runArgs": [
+    "-e", "DISPLAY=host.docker.internal:0.0"
+  ],
+  // Автоматически устанавливаем расширение Python внутрь контейнера
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
+  // Говорим VS Code работать под обычным пользователем (если нужно)
+  "remoteUser": "root"
+}
